@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Sąskaita Faktūra</title>
+</head>
+
+<body class="screen">
+    <div class="saskaita-app">
+        <header>
+            <div class="top">
+                <h1 class="title">SĄSKAITA FAKTŪRA</h1>
+            </div>
+        </header>
+        <div class="sask-number">
+            <p class="number">NR: <span data-number></span></p>
+        </div>
+        <div class="sask-data">
+            <p class="date"><span data-date></span></p>
+        </div>
+        <div class="sask-iki">
+            <p class="due-date">Apmokėti iki: <span data-due-date></span></p>
+        </div>
+        <div class="company seller"><h2>PARDAVĖJAS</h2><ul data-comp-seller></ul></div>
+        <div class="company buyer"><h2>PIRKĖJAS</h2><ul data-comp-buyer></ul></div>
+        <table class="items">
+            <tbody data-items>
+                <tr>
+                    <th>Eil. Nr.</th>
+                    <th>Pavadinimas</th>
+                    <th>Kiekis</th>
+                    <th>Kaina</th>
+                    <th>Nuolaida</th>
+                </tr>
+            </tbody>
+        </table>
+        <div class="shipping"><span data-shipping-price></span></div>
+        <div data-total class="data-total">
+            <p>Suma už <span data-total-count></span> vnt. su nuolaida be PVM: <span data-without-pvm></span>€</p>
+            <p>Nuolaida: <span data-total-discount></span>€</p>
+            <p>PVM: <span data-pvm></span></p>
+            <p class="total-total">Iš viso (su PVM, Nuolaida ir Transportavimo kaina): <span data-with-pvm></span>€</p>
+        </div>
+    </div>
+    <template data-item-template>
+        <td class="counting" data-item-count></td>
+        <td class="description" data-item-description></td>
+        <td class="count" data-item-quantity></td>
+        <td class="price" data-item-price></td>
+        <td class="discount" data-item-discount></td>
+    </template>
+
+    <template data-company-template>
+        <div class="company" data-company>
+            <div class="info">
+            <div class="name" data-company-name>Kazkas</div>
+            <div class="address" data-company-address>Saltoniškių prospektas 96, Vilnius LT-00900</div>
+            <div class="code" data-company-code>51515</div>
+            <div class="vat" data-company-vat>LT107247297</div>
+            <div class="phone" data-company-phone>+37064564513</div>
+            <div class="email" data-company-email>zoja86@hotmail.com</div>
+        </div>
+        </div>
+    </template>
+</body>
+
+</html>

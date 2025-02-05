@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+.screen {
+  font-family: "Times New Roman", serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: #000000;
+}
+.screen .saskaita-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.screen .saskaita-app header {
+  height: 85px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.screen .saskaita-app header .top {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+.screen .saskaita-app header .top .title {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.screen .saskaita-app .sask-number {
+  margin-top: -15px;
+  font-weight: bold;
+}
+.screen .saskaita-app .sask-data {
+  margin-top: -30px;
+}
+.screen .saskaita-app .company {
+  display: inline-block;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  font-size: 12px;
+}
+.screen .saskaita-app .company.seller {
+  margin-left: -500px;
+}
+.screen .saskaita-app .company.buyer {
+  margin-top: -160px;
+  margin-left: 500px;
+}
+.screen .saskaita-app .table {
+  display: grid;
+  font-size: 19px;
+}
+.screen .saskaita-app .table .eil {
+  margin-left: -250px;
+}
+.screen .saskaita-app .table .pavad {
+  margin-left: -100px;
+}
+.screen .saskaita-app .shipping {
+  margin-top: 20px;
+  margin-left: -390px;
+}
+.screen .saskaita-app .data-total {
+  margin-top: 20px;
+  margin-left: 400px;
+}
+.screen .saskaita-app .data-total .total-total {
+  font-weight: bold;
+}
+.screen .info {
+  font-size: 13px;
+  margin-left: -32px;
+}
+.screen .items {
+  border: #808080 solid;
+}
+.screen .items td, .screen .items th {
+  border: 1px solid #C0C0C0;
+  text-align: left;
+  padding: 8px;
+}

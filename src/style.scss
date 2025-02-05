@@ -1,0 +1,112 @@
+$xl: 1200px;
+$m: 864px;
+$s: 576px;
+
+$black: #000000;
+$gray: #808080;
+$sil: #C0C0C0;
+$white: white;
+
+$tnr: 'Times New Roman', serif;
+
+* {
+  box-sizing: border-box;
+}
+
+.screen {
+  font-family: $tnr;
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+  color: $black;
+
+  .saskaita-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    header {
+      height: 85px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .top {
+        width: 100%;
+        max-width: $xl;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+
+        .title {
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+    .sask-number {
+      margin-top: -15px;
+      font-weight: bold;
+    }
+    .sask-data {
+      margin-top: -30px;
+    }
+      .company {
+        display: inline-block;
+        flex-direction: column;  
+        align-items: flex-start; 
+        justify-content: space-around;
+        font-size: 12px;
+      }
+      .company.seller {
+        margin-left: -500px;
+      }
+      .company.buyer {
+        margin-top: -160px;
+        margin-left: 500px;
+      }
+      .table {
+        display: grid;
+        font-size: 19px;
+        
+        .eil {
+          margin-left: -250px;
+          
+        
+        }
+        .pavad {
+          margin-left: -100px;
+        }
+
+      }
+      .shipping {
+        margin-top: 20px;
+        margin-left: -390px;
+      }
+      .data-total {
+        margin-top: 20px;
+        margin-left: 400px;
+        .total-total{
+          font-weight: bold;
+        }
+      }
+  }
+  .info {
+    font-size: 13px;
+    margin-left: -32px;
+  }
+  .items {
+    border: $gray solid;
+    td, th {
+      border: 1px solid $sil;
+      text-align: left;
+      padding: 8px;
+    }
+  }
+}
