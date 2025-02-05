@@ -128,7 +128,7 @@ var getTotalDiscount = function getTotalDiscount(sask) {
 };
 var getWithoutPvm = function getWithoutPvm(sask) {
   var withoutPvmValue = sask.items.map(function (item) {
-    return item.price * item.quantity;
+    return item.price;
   }).reduce(function (count, price) {
     return count + price;
   }, 0);

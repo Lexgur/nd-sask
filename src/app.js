@@ -139,7 +139,7 @@ const getTotalDiscount = sask => {
 
 const getWithoutPvm = sask => {
     const withoutPvmValue = sask.items
-        .map(item => item.price * item.quantity)
+        .map(item => item.price)
         .reduce((count, price) => count + price, 0);
 
     document.querySelector('[data-without-pvm]').innerText = withoutPvmValue.toFixed(2);
