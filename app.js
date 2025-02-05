@@ -143,7 +143,7 @@ var getPvmValue = function getPvmValue(withoutPvmValue) {
 var getFinalSum = function getFinalSum(sask) {
   var withoutPvmValue = getWithoutPvm(sask);
   var pvmValue = getPvmValue(withoutPvmValue);
-  var finalSum = withoutPvmValue - totalDiscount + pvmValue;
+  var finalSum = withoutPvmValue - totalDiscount + pvmValue + sask.shippingPrice;
   document.querySelector('[data-with-pvm]').innerText = finalSum.toFixed(2);
 };
 

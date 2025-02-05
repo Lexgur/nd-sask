@@ -155,6 +155,6 @@ const getPvmValue = withoutPvmValue => {
 const getFinalSum = sask => {
     const withoutPvmValue = getWithoutPvm(sask);
     const pvmValue = getPvmValue(withoutPvmValue);
-    const finalSum = withoutPvmValue - totalDiscount + pvmValue;
+    const finalSum = withoutPvmValue - totalDiscount + pvmValue + sask.shippingPrice;
     document.querySelector('[data-with-pvm]').innerText = finalSum.toFixed(2);
 };
