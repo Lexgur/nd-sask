@@ -77,7 +77,6 @@ const renderItems = sask => {
     let items = sask.items;  
     const itemsSorted = items.sort((a, b) => a.price - b.price);  
 
-    
     itemsSorted.forEach((item, index) => {
         const td = itemTemplate.content.cloneNode(true); 
         const counting = td.querySelector('[data-item-count]');
@@ -107,7 +106,6 @@ const renderItems = sask => {
         tr.appendChild(td);
         table.appendChild(tr);  
     });
-    
 };
 
 const getTotalAmountCount = sask => {
@@ -136,17 +134,11 @@ const getTotalDiscount = sask => {
 
 const getWithoutPvm = sask => {
     const withoutPvmValue = sask.items
-        .map(item => item.price)
+        .map(item => item.price * item.quantity)
         .reduce((count, price) => count + price, 0);
 
     document.querySelector('[data-without-pvm]').innerText = withoutPvmValue.toFixed(2);
     return withoutPvmValue;
-};
-
-const getPvmValue = withoutPvmValue => {
-    const pvmValue = (withoutPvmValue * 21) / 100;
-    document.querySelector('[data-pvm]').innerText = pvmValue.toFixed(2);
-    return pvmValue;
 };
 
 const getFinalSum = sask => {
@@ -154,4 +146,10 @@ const getFinalSum = sask => {
     const pvmValue = getPvmValue(withoutPvmValue);
     const finalSum = withoutPvmValue - totalDiscount + pvmValue + sask.shippingPrice;
     document.querySelector('[data-with-pvm]').innerText = finalSum.toFixed(2);
+};
+
+const getPvmValue = finalSum => {
+    const pvmValue = (finalSum * 21) / 100;
+    document.querySelector('[data-pvm]').innerText = pvmValue.toFixed(2);
+    return pvmValue;
 };

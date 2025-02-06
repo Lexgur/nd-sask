@@ -128,23 +128,23 @@ var getTotalDiscount = function getTotalDiscount(sask) {
 };
 var getWithoutPvm = function getWithoutPvm(sask) {
   var withoutPvmValue = sask.items.map(function (item) {
-    return item.price;
+    return item.price * item.quantity;
   }).reduce(function (count, price) {
     return count + price;
   }, 0);
   document.querySelector('[data-without-pvm]').innerText = withoutPvmValue.toFixed(2);
   return withoutPvmValue;
 };
-var getPvmValue = function getPvmValue(withoutPvmValue) {
-  var pvmValue = withoutPvmValue * 21 / 100;
-  document.querySelector('[data-pvm]').innerText = pvmValue.toFixed(2);
-  return pvmValue;
-};
 var getFinalSum = function getFinalSum(sask) {
   var withoutPvmValue = getWithoutPvm(sask);
   var pvmValue = getPvmValue(withoutPvmValue);
   var finalSum = withoutPvmValue - totalDiscount + pvmValue + sask.shippingPrice;
   document.querySelector('[data-with-pvm]').innerText = finalSum.toFixed(2);
+};
+var getPvmValue = function getPvmValue(finalSum) {
+  var pvmValue = finalSum * 21 / 100;
+  document.querySelector('[data-pvm]').innerText = pvmValue.toFixed(2);
+  return pvmValue;
 };
 
 /***/ }),
