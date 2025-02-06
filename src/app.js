@@ -17,15 +17,12 @@ fetch(url)
         getFinalSum(sask);
     });
 
-    
     const init = sask => {
         document.querySelector('[data-number]').innerText = sask.number;
         document.querySelector('[data-date]').innerText = sask.date;
         document.querySelector('[data-due-date]').innerText = sask.due_date;
         document.querySelector('[data-shipping-price]').innerText = `Transportavimo kaina: ${sask.shippingPrice} €`;
     }
-
-    
 
 const renderSeller = sask => {
     const ul = document.querySelector('[data-comp-seller]');
